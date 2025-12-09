@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YardCoin | Grow Food, Earn Rewards in Oshawa</title>
+    <meta name="description" content="Join the YardCoin pilot in Oshawa. Earn tokens for growing food in local backyards. No experience needed.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2C2C2C;
+            background: #FAFAF8;
+        }
+        
+        /* Header */
+        header {
+            background: #2D5016;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+        }
+        
+        .logo-accent {
+            color: #F7931A;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #7CB342;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2D5016 0%, #7CB342 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-family: Georgia, serif;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #F7931A;
+            color: white;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #E68A15;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+        }
+        
+        /* How It Works */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2D5016;
+            font-family: Georgia, serif;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: #F7931A;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #2D5016;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Rewards */
+        .rewards {
+            background: white;
+        }
+        
+        .reward-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .reward-card {
+            background: linear-gradient(135deg, #7CB342 0%, #2D5016 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .reward-card .size {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reward-card .amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reward-card .period {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .benefit-icon {
+            background: #7CB342;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2D5016;
+        }
+        
+        .benefit-text p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2D5016 0%, #F7931A 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #2D5016;
+        }
+        
+        .cta-secondary:hover {
+            background: #f0f0f0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #F7931A;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: #7CB342;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #2D5016;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: #7CB342;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #7CB342;
+        }
+        
+        .faq-item h3 {
+            color: #2D5016;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-item p {
+            color: #666;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">Yard<span class="logo-accent">Coin</span></div>
+            <nav>
+                <a href="#how">How It Works</a>
+                <a href="#rewards">Rewards</a>
+                <a href="#faq">FAQ</a>
+                <a href="#join">Join Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grow Food. Earn Rewards.</h1>
+            <p>Turn your Oshawa backyard into a productive garden and earn YARD tokens for every week of gardening work.</p>
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="cta-button">Join the Pilot →</a>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Limited spots for founding gardeners • 12-week pilot</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" id="how">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Register</h3>
+                <p>Sign up with your garden details. Minimum 10 sq ft. Your backyard or someone else's!</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Plant & Grow</h3>
+                <p>Plant vegetables, herbs, or fruit. We'll help you get started if you're new to gardening.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Submit Photos</h3>
+                <p>Each week, submit 1-3 photos of your garden plus a quick note on what you did.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Earn YARD</h3>
+                <p>Get rewarded based on your garden size and weekly maintenance. Tokens sent to your wallet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards -->
+    <section class="section rewards" id="rewards">
+        <h2>Weekly Rewards</h2>
+        <div class="reward-grid">
+            <div class="reward-card">
+                <div class="size">10-25 sq ft</div>
+                <div class="amount">0.5-1.25</div>
+                <div class="period">YARD/week</div>
+            </div>
+            <div class="reward-card">
+                <div class="size">50 sq ft</div>
+                <div class="amount">2.5</div>
+                <div class="period">YARD/week</div>
+            </div>
+            <div class="reward-card">
+                <div class="size">100 sq ft</div>
+                <div class="amount">5.0</div>
+                <div class="period">YARD/week</div>
+            </div>
+            <div class="reward-card">
+                <div class="size">200 sq ft</div>
+                <div class="amount">10.0</div>
+                <div class="period">YARD/week</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #666;">
+            <strong>Backyard hosts</strong> who provide land earn 20% of rewards. <strong>Self-gardeners</strong> keep 100%.
+        </p>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section">
+        <h2>Why Join YardCoin?</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">🌱</div>
+                <div class="benefit-text">
+                    <h3>Grow Your Own Food</h3>
+                    <p>Fresh, organic produce right from your backyard. Know exactly where your food comes from.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-text">
+                    <h3>Earn Real Rewards</h3>
+                    <p>Get compensated for your gardening work with YARD tokens every single week.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🎓</div>
+                <div class="benefit-text">
+                    <h3>Learn Gardening</h3>
+                    <p>No experience needed. We provide resources and connect you with experienced growers.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-text">
+                    <h3>Join a Community</h3>
+                    <p>Connect with other Oshawa gardeners. Share tips, seeds, and harvest stories.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🌍</div>
+                <div class="benefit-text">
+                    <h3>Support Local Food</h3>
+                    <p>Help build a more resilient local food system right here in Oshawa.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🏡</div>
+                <div class="benefit-text">
+                    <h3>Turn Yards Productive</h3>
+                    <p>Transform unused space into something useful. Your lawn could be growing tomatoes!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h3>Do I need gardening experience?</h3>
+            <p>Not at all! We welcome beginners. We'll provide resources to help you get started, and you'll be part of a community of gardeners who can help.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What if I don't have a backyard?</h3>
+            <p>You can still participate! Find a homeowner who has unused yard space, garden there, and split the rewards 80/20 (you get 80%, they get 20%).</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How big does my garden need to be?</h3>
+            <p>Minimum 10 sq ft (about 3ft x 3ft - roughly the size of a raised bed). Maximum 200 sq ft for pilot rewards.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What can I grow?</h3>
+            <p>Any edible plants! Vegetables (tomatoes, peppers, lettuce), herbs (basil, cilantro), or fruit. Must be food-producing plants.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How do I get my YARD tokens?</h3>
+            <p>You'll need a Polygon wallet (we'll help you set this up). After your weekly photos are approved, tokens are sent automatically to your wallet.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Is this a cryptocurrency investment?</h3>
+            <p>No. YardCoin is a utility token earned through gardening work. It's not sold, marketed as an investment, or traded. This is about rewarding community food production.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How long is the pilot?</h3>
+            <p>12 weeks, starting in [MONTH]. We're looking for 10-15 founding participants to test the concept.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What if I miss a week?</h3>
+            <p>That's okay! You only get rewards for weeks where you submit proof. If you miss a week, just resume the following week.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <h2>Ready to Start Growing?</h2>
+        <p>Join the YardCoin pilot and be a founding member of Oshawa's community gardening reward program.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="cta-button cta-secondary">Register Now →</a>
+        <p style="font-size: 0.9rem; margin-top: 1.5rem;">Questions? Email us at <a href="mailto:your@email.com" style="color: white; text-decoration: underline;">your@email.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>YardCoin</h3>
+                <p>Community rewards for local food production in Oshawa, Ontario.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/yardcoin_oshawa" target="_blank">📷</a>
+                    <a href="https://facebook.com/yardcoin" target="_blank">📘</a>
+                    <a href="https://twitter.com/yardcoin" target="_blank">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#how">How It Works</a>
+                <a href="#rewards">Rewards</a>
+                <a href="#faq">FAQ</a>
+                <a href="YOUR_GOOGLE_FORM_LINK_HERE">Register</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Oshawa, Ontario, Canada</p>
+                <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+                <p>Telegram: <a href="https://t.me/yardcoin">@yardcoin</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p style="font-size: 0.85rem; line-height: 1.5;">YardCoin is a utility reward token earned through verified gardening activities. Not sold as an investment. Tokens have no monetary value outside the pilot program.</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 YardCoin. All rights reserved. | Oshawa Pilot Program</p>
+        </div>
+    </footer>
+</body>
+</html>
